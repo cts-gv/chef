@@ -30,3 +30,8 @@ Open `dist/index.html` through any static server (for example `npx serve dist`).
 - `src/client.js`: the browser script (menu, quote form, date picker, video, lightbox)
 - `src/input.css` + `tailwind.config.js`: styling (Tailwind, compiled at build time)
 - `public/`: images, videos, robots.txt, sitemap.xml (copied as-is into dist/)
+
+## Publishing flow
+- Work on the `staging` branch. Every push publishes a preview to GitHub Pages (noindex).
+- When the preview looks right, merge `staging` into `main` (open a pull request).
+- Cloudflare Pages builds `main` and publishes the live site.

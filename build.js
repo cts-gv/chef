@@ -508,7 +508,7 @@ const page = `<!doctype html>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="wine.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#1A1A1A" />
+    <meta name="theme-color" content="#1A1A1A" />${process.env.NOINDEX ? '\n    <meta name="robots" content="noindex, nofollow" />' : ''}
     <title>${esc(title)}</title>
     <meta name="description" content="Private chef, event catering, and custom meal prep in the Yakima Valley, Tri-Cities and Walla Walla. Weddings, quinceañeras, corporate events, and intimate gatherings. Get a free quote today." />
     <link rel="canonical" href="${SITE_URL}/" />
@@ -573,8 +573,11 @@ fs.rmSync(path.join(DIST, 'PLACE-VIDEO-HERE.txt'), { force: true });
 fs.writeFileSync(path.join(DIST, 'index.html'), page);
 fs.copyFileSync(path.join(__dirname, 'src', 'client.js'), path.join(DIST, 'main.js'));
 
+// Preview builds (NOINDEX=1) tell search engines to stay away
+if (process.env.NOINDEX) fs.writeFileSync(path.join(DIST, 'robots.txt'), 'User-agent: *\nDisallow: /\n');
+
 // sitemap/robots: keep your domain in sync if SITE_URL is set
-for (const f of ['sitemap.xml', 'robots.txt']) {
+for (const f of process.env.NOINDEX ? ['sitemap.xml'] : ['sitemap.xml', 'robots.txt']) {
   const p = path.join(DIST, f);
   if (fs.existsSync(p)) fs.writeFileSync(p, fs.readFileSync(p, 'utf8').replace(/https:\/\/YOUR-DOMAIN\.com/g, SITE_URL));
 }
