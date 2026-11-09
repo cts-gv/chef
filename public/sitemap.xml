@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://YOUR-DOMAIN.com/</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://YOUR-DOMAIN.com/hero-poster.jpg</image:loc>
+      <image:title>Chef Who Drinks Whiskey private chef and catering</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://YOUR-DOMAIN.com/meet-the-chef.jpg</image:loc>
+      <image:title>Meet the chef, Gabe</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://YOUR-DOMAIN.com/gallery-1.jpg</image:loc>
+      <image:title>Catered event spread prepared by Chef Gabe</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://YOUR-DOMAIN.com/gallery-2.jpg</image:loc>
+      <image:title>Plated dish from a catered event</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://YOUR-DOMAIN.com/gallery-3.jpg</image:loc>
+      <image:title>Buffet setup at a catered event</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://YOUR-DOMAIN.com/gallery-4.jpg</image:loc>
+      <image:title>Guests enjoying food at a catered event</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://YOUR-DOMAIN.com/gallery-5.jpg</image:loc>
+      <image:title>Chef Gabe serving at a catered event</image:title>
+    </image:image>
+  </url>
+</urlset>

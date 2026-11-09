@@ -1,0 +1,24 @@
+PLACE YOUR HERO VIDEO HERE
+===========================
+
+Put your video file in this folder and name it: hero-video.mp4
+
+The website will automatically use it as the background video in the hero section.
+
+Supported formats: .mp4 (recommended), .webm
+
+To use a different filename or format:
+  1. Open src/config/site.ts
+  2. Find the "hero" section
+  3. Change videoSrc to "/your-filename.webm" etc.
+
+To use a different poster image (shown before video loads):
+  1. Open src/config/site.ts
+  2. Find the "hero" section
+  3. Change posterImage to "/your-image.jpg" or a URL
+
+Tips for a great hero video:
+  - Keep it 10-30 seconds long (it loops automatically)
+  - Use 1920x1080 or similar resolution
+  - Muted is fine (the video plays without sound)
+  - Show cooking action, tacos being made, or event scenes
