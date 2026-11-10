@@ -52,7 +52,7 @@ module.exports = {
     title: "Meet The Chef",
     image: "meet-the-chef.jpg",
     paragraphs: [
-      "For over a decade, Gabe has been bringing the vibrant flavors of authentic Mexican street food to events across the region. What started as a small taco stand at local farmers' markets grew into a full-service catering operation serving hundreds of events.",
+      "For over a decade, Gabe has been bringing the vibrant flavors of authentic Mexican street food to events across the Yakima Valley, Tri-Cities and Walla Walla. What started as a small taco stand at local farmers' markets grew into a full-service catering operation serving hundreds of events.",
       "From intimate dinners for ten to grand celebrations for five hundred, Gabe brings the same passion, quality ingredients, and attention to detail to every plate. Every tortilla is hand-pressed, every salsa made from scratch, every dish plated with care.",
       "Whether you're planning the wedding of your dreams, a corporate gala, a quinceañera, or an intimate evening with close friends, Gabe crafts a menu that tells your story through food.",
     ],
