@@ -83,11 +83,11 @@ module.exports = {
     heading: "A Taste of Our Events",
     intro: "A few highlights from recent catering jobs.",
     images: [
-      { src: "gallery-1.jpg", alt: "Catered event spread prepared by Chef Gabe in Tri-Cities" },
-      { src: "gallery-2.jpg", alt: "Plated dish from a catered event in Richland" },
-      { src: "gallery-3.jpg", alt: "Buffet setup at a catered event in Prosser" },
-      { src: "gallery-4.jpg", alt: "Guests enjoying food at a catered event in Yakima" },
-      { src: "gallery-5.jpg", alt: "Chef Gabe serving at a catered event in Walla Walla" },
+      { src: "gallery-1.jpg", alt: "Catered event spread prepared by Chef Gabe in Tri-Cities, Washington" },
+      { src: "gallery-2.jpg", alt: "Plated dish from a catered event in Richland, Washington" },
+      { src: "gallery-3.jpg", alt: "Buffet setup at a catered event Yakima, Washington" },
+      { src: "gallery-4.jpg", alt: "Guests enjoying food at a catered event in Prosser, Washington" },
+      { src: "gallery-5.jpg", alt: "Chef Gabe serving at a catered event Walla Walla, Washington" },
     ],
   },
 
