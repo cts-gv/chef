@@ -1,12 +1,17 @@
-name: Deploy to GitHub Pages
+# Publishes the `staging` branch to GitHub Pages so you can look at changes
+# before they go live. Production (main) is built and hosted by Cloudflare.
+name: Preview on GitHub Pages
 on:
   push:
-    branches: [main]
+    branches: [staging]
   workflow_dispatch:
 permissions:
   contents: read
   pages: write
   id-token: write
+concurrency:
+  group: pages
+  cancel-in-progress: true
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -18,8 +23,8 @@ jobs:
       - run: npm ci
       - run: npm run build
         env:
-          # Set this to the live address, e.g. https://www.chefwhodrinkswhiskey.com
-          SITE_URL: https://YOUR-DOMAIN.com
+          NOINDEX: "1"                      # keep the preview out of Google
+          SITE_URL: https://YOUR-DOMAIN.com # leave as the real production address
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
