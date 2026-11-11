@@ -53,13 +53,17 @@
   var chefVideo = $('#chef-video');
   var chefPlay = $('#chef-play');
   if (chefVideo && chefPlay) {
-    chefVideo.volume = parseFloat(chefVideo.getAttribute('data-volume') || '0.5');
+    var startVolume = parseFloat(chefVideo.getAttribute('data-volume') || '0.5');
+    chefVideo.volume = startVolume;
     var setStarted = function (on) {
       chefVideo.controls = on;
       chefPlay.style.display = on ? 'none' : '';
     };
     chefPlay.addEventListener('click', function () {
       setStarted(true);
+      // Make sure sound is on: unmute and apply the starting volume when play is pressed.
+      chefVideo.muted = false;
+      chefVideo.volume = startVolume;
       var p = chefVideo.play();
       if (p && p.catch) p.catch(function () { setStarted(false); });
     });

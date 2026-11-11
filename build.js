@@ -220,6 +220,11 @@ const gallery = () => {
         )
         .join('\n      ')}
     </div>
+    <div class="mt-10 sm:mt-12 flex justify-center">
+      <a href="${esc(site.business.instagram)}" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full bg-white/10 hover:bg-[#B8742C] flex items-center justify-center transition-colors" aria-label="Follow us on Instagram">
+        ${icon('instagram', 'w-6 h-6 text-white')}
+      </a>
+    </div>
   </div>
 </section>`;
 };
@@ -280,6 +285,13 @@ const monthlySpecial = () => {
         ${s.offerDetails ? `<p class="text-white/45 text-sm mb-7">${esc(s.offerDetails)}</p>` : ''}
         <a href="${esc(ctaHref)}" class="inline-flex w-fit items-center justify-center rounded-xl bg-[#B8742C] px-6 py-3.5 font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#A06420] hover:shadow-lg hover:shadow-[#B8742C]/20">${esc(s.ctaText)}</a>
       </div>${hasSecond ? flyer(s.secondImage, s.secondImageAlt || '', 'special-open-2') : ''}
+    </div>
+
+    <div class="mt-8 sm:mt-10 flex items-center justify-center gap-3 sm:gap-4 text-center">
+      <p class="text-white/70 text-sm sm:text-base">To view more specials, visit our Instagram</p>
+      <a href="${esc(site.business.instagram)}" target="_blank" rel="noopener noreferrer" class="flex-shrink-0 w-11 h-11 rounded-full bg-white/10 hover:bg-[#B8742C] flex items-center justify-center transition-colors" aria-label="View more specials on Instagram">
+        ${icon('instagram', 'w-5 h-5 text-white')}
+      </a>
     </div>
   </div>
 
