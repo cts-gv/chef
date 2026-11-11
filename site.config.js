@@ -146,9 +146,13 @@ module.exports = {
     //   Never cropped, so any shape fits. Keep text large enough to read on a phone. JPG under 300 KB.
     // Flyer or photo for the card. Shown whole (never cropped) and opens full size when clicked.
     // To switch months, drop the new file in /public and change the filename here.
-    //   "special-offer.jpg" = $200 deposit flyer   |   "build-menu.jpg" = Build Your Menu flyer
+    //   "special-offer.jpg" = $200 deposit flyer   |   "build-menu.jpg" = Build Your Menu flyer   |   "flash-sale.jpg" = Flash Sale flyer
     image: "flash-sale.jpg",
-    imageAlt: "Special offer flyer: book any size event and pay only a $200 deposit",
+    imageAlt: "Flash Sale flyer: carne asada cookout, surf and turf bar, and holiday custom menus",
+    // Second flyer, shown on the opposite side of the text. Leave secondImage as "" to hide it.
+    // Same size advice as above. "special-offer.jpg" = $200 deposit flyer.
+    secondImage: "build-menu.jpg",
+    secondImageAlt: "Build Your Menu flyer: $20 per guest, 2 entrees, 2 sides and 1 appetizer",
     offerDetails: "Ask about a seasonal menu tailored to your gathering.",
     ctaText: "Ask About This Special",
     ctaTarget: "contact",
