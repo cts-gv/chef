@@ -251,6 +251,13 @@ const whyUs = () => `
 const monthlySpecial = () => {
   const s = site.monthlySpecial;
   const ctaHref = s.ctaTarget.startsWith('#') ? s.ctaTarget : `#${s.ctaTarget}`;
+  const hasSecond = Boolean(s.secondImage);
+  const flyer = (src, alt, id) => `
+      <div class="flex items-center justify-center p-4 sm:p-6">
+        <button type="button" data-special-open data-src="${esc(src)}" data-alt="${esc(alt)}" id="${id}" aria-label="View larger: ${esc(alt)}" class="group block overflow-hidden rounded-xl shadow-lg ring-1 ring-white/10 cursor-zoom-in">
+          <img src="${esc(src)}" alt="${esc(alt)}" loading="lazy" class="block w-auto max-w-full max-h-[520px] sm:max-h-[560px] transition-transform duration-500 group-hover:scale-[1.03]" />
+        </button>
+      </div>`;
   return `
 <section id="monthly-special" class="relative overflow-hidden py-20 sm:py-28 bg-[#1A1A1A]">
   <div class="absolute -top-24 -right-16 h-72 w-72 rounded-full bg-[#B8742C]/20 blur-3xl" aria-hidden="true"></div>
@@ -262,12 +269,7 @@ const monthlySpecial = () => {
       <p class="mt-4 text-white/65 max-w-2xl mx-auto leading-relaxed">${esc(s.intro)}</p>
     </div>
 
-    <div class="grid lg:grid-cols-2 overflow-hidden rounded-3xl border border-white/10 bg-white/[0.04] shadow-2xl transition-all duration-500 hover:border-[#E8B86D]/40 hover:shadow-[#B8742C]/10">
-      <div class="flex items-center justify-center p-4 sm:p-6">
-        <button type="button" id="special-open" aria-label="View larger: ${esc(s.imageAlt)}" class="group block overflow-hidden rounded-xl shadow-lg ring-1 ring-white/10 cursor-zoom-in">
-          <img src="${esc(s.image)}" alt="${esc(s.imageAlt)}" loading="lazy" class="block w-auto max-w-full max-h-[520px] sm:max-h-[560px] transition-transform duration-500 group-hover:scale-[1.03]" />
-        </button>
-      </div>
+    <div class="grid ${hasSecond ? 'lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)_minmax(0,1fr)]' : 'lg:grid-cols-2'} overflow-hidden rounded-3xl border border-white/10 bg-white/[0.04] shadow-2xl transition-all duration-500 hover:border-[#E8B86D]/40 hover:shadow-[#B8742C]/10">${flyer(s.image, s.imageAlt, 'special-open')}
       <div class="flex flex-col justify-center p-7 sm:p-10 lg:p-12">
         <div class="mb-5">
           <div class="inline-flex items-center gap-2 rounded-full bg-[#E8B86D] px-4 py-2 text-xs font-bold uppercase tracking-wider text-[#1A1A1A]">${icon('calendar-heart', 'w-4 h-4')} ${esc(s.badge)}</div>
@@ -277,7 +279,7 @@ const monthlySpecial = () => {
         <p class="text-white/70 leading-relaxed mb-5">${esc(s.description)}</p>
         ${s.offerDetails ? `<p class="text-white/45 text-sm mb-7">${esc(s.offerDetails)}</p>` : ''}
         <a href="${esc(ctaHref)}" class="inline-flex w-fit items-center justify-center rounded-xl bg-[#B8742C] px-6 py-3.5 font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#A06420] hover:shadow-lg hover:shadow-[#B8742C]/20">${esc(s.ctaText)}</a>
-      </div>
+      </div>${hasSecond ? flyer(s.secondImage, s.secondImageAlt || '', 'special-open-2') : ''}
     </div>
   </div>
 

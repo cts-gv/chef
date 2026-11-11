@@ -47,22 +47,30 @@
   $$('a', mobileMenu).forEach(function (a) { a.addEventListener('click', function () { setMenu(false); }); });
 
   // ---------- chef video (plays only when the visitor presses play) ----------
+  // NOTE: the play overlay uses Tailwind's "flex" class, which overrides the HTML
+  // `hidden` attribute, so we hide it with inline display instead. Otherwise it stays
+  // on top of the video and blocks the native controls (pause, volume, seek bar).
   var chefVideo = $('#chef-video');
   var chefPlay = $('#chef-play');
   if (chefVideo && chefPlay) {
     chefVideo.volume = parseFloat(chefVideo.getAttribute('data-volume') || '0.5');
     var setStarted = function (on) {
       chefVideo.controls = on;
-      chefPlay.hidden = on;
+      chefPlay.style.display = on ? 'none' : '';
     };
-    chefPlay.addEventListener('click', function () { setStarted(true); chefVideo.play(); });
+    chefPlay.addEventListener('click', function () {
+      setStarted(true);
+      var p = chefVideo.play();
+      if (p && p.catch) p.catch(function () { setStarted(false); });
+    });
     chefVideo.addEventListener('play', function () { setStarted(true); });
     chefVideo.addEventListener('ended', function () { setStarted(false); });
   }
 
-  // ---------- monthly special lightbox ----------
+  // ---------- monthly special lightbox (works for every flyer) ----------
   var lb = $('#special-lightbox');
   if (lb) {
+    var lbImg = $('#special-lightbox-img');
     var prevOverflow = '';
     var closeLb = function () {
       lb.hidden = true;
@@ -71,16 +79,20 @@
       document.removeEventListener('keydown', onLbKey);
     };
     var onLbKey = function (e) { if (e.key === 'Escape') closeLb(); };
-    $('#special-open').addEventListener('click', function () {
-      prevOverflow = document.body.style.overflow;
-      document.body.style.overflow = 'hidden';
-      lb.hidden = false;
-      lb.classList.add('flex');
-      document.addEventListener('keydown', onLbKey);
+    $$('[data-special-open]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        lbImg.src = btn.getAttribute('data-src');
+        lbImg.alt = btn.getAttribute('data-alt') || '';
+        prevOverflow = document.body.style.overflow;
+        document.body.style.overflow = 'hidden';
+        lb.hidden = false;
+        lb.classList.add('flex');
+        document.addEventListener('keydown', onLbKey);
+      });
     });
     $('#special-close').addEventListener('click', closeLb);
     lb.addEventListener('click', closeLb);
-    $('#special-lightbox-img').addEventListener('click', function (e) { e.stopPropagation(); });
+    lbImg.addEventListener('click', function (e) { e.stopPropagation(); });
   }
 
   // ---------- reveal phone / email (decoded only after a real tap) ----------
