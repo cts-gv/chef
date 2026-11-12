@@ -196,7 +196,7 @@ module.exports = {
   // 1. Create a form at https://formspree.io and copy its endpoint URL.
   // 2. Paste it below (it looks like https://formspree.io/f/xyzabcde).
   formspree: {
-    endpoint: "https://formspree.io/f/xjyyolqz",
+    endpoint: "https://formspree.io/f/moeegebg",
   },
 
   // ---- QUOTE GENERATOR SETTINGS ----
