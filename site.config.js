@@ -139,20 +139,20 @@ module.exports = {
     heading: "This Month’s Special",
     intro: "Every month brings a new reason to gather around great food. Check back for our latest seasonal offer.",
     badge: "Seasonal feature",
-    monthLabel: "October • Fall Gatherings",
+    monthLabel: "November • Fall Gatherings",
     title: "Make Your Fall Gathering Delicious",
-    description: "Planning a Halloween get-together, autumn celebration, or cozy family party? Let’s bring the taco bar to your table. Reach out to discuss a menu and catering package tailored to your guest list.",
+    description: "Planning a Thanksgiving get-together, autumn celebration, or cozy family party? Let’s bring those fall ingredients to your table. Reach out to discuss a menu and catering package tailored to your guest list.",
     // IMAGE SIZE: 1080 x 1350 px (4:5 portrait) is ideal; flyers up to 1080 x 1920 also work.
     //   Never cropped, so any shape fits. Keep text large enough to read on a phone. JPG under 300 KB.
     // Flyer or photo for the card. Shown whole (never cropped) and opens full size when clicked.
     // To switch months, drop the new file in /public and change the filename here.
     //   "special-offer.jpg" = $200 deposit flyer   |   "build-menu.jpg" = Build Your Menu flyer   |   "flash-sale.jpg" = Flash Sale flyer
-    image: "flash-sale.jpg",
-    imageAlt: "Flash Sale flyer: carne asada cookout, surf and turf bar, and holiday custom menus",
+    image: "fall-special.jpg",
+    imageAlt: "A gourmet autumn-themed private chef dish featuring seasonal fall ingredients like roasted squash and root vegetables",
     // Second flyer, shown on the opposite side of the text. Leave secondImage as "" to hide it.
     // Same size advice as above. "special-offer.jpg" = $200 deposit flyer.
-    secondImage: "build-menu.jpg",
-    secondImageAlt: "Build Your Menu flyer: $20 per guest, 2 entrees, 2 sides and 1 appetizer",
+    secondImage: "friday-family-dinners.jpg",
+    secondImageAlt: "Elegant family-style dinner party catered by a private chef, featuring large platters of gourmet food and shared plates",
     offerDetails: "Ask about a seasonal menu tailored to your gathering.",
     ctaText: "Ask About This Special",
     ctaTarget: "contact",
